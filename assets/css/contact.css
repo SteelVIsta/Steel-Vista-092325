@@ -1,0 +1,28 @@
+/* ===== CONTACT (contact.css) ===== */
+
+/* Hero */
+.contact-hero{
+  background-image:url("../img/contact-hero.jpg");
+}
+
+/* 폼 컨테이너 */
+.contact-form{max-width:720px;margin:0 auto}
+.contact-form label{display:block;font-weight:600;margin:10px 0 6px}
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+  width:100%; padding:12px 14px; border-radius:10px;
+  border:1px solid var(--border); background:#fff; color:var(--text);
+}
+.contact-form textarea{min-height:140px; resize:vertical}
+.contact-form .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+.contact-form .actions .btn{min-width:160px}
+
+/* 연락처 카드 */
+.contact-cards{display:grid; gap:20px; grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.contact-cards{grid-template-columns:1fr}}
+.contact-card{border:1px solid var(--border); border-radius:14px; padding:18px; background:#fff}
+
+/* 지도 임베드 */
+.map-embed{position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--border)}
+.map-embed iframe, .map-embed img{position:absolute; inset:0; width:100%; height:100%; border:0}

@@ -1,0 +1,32 @@
+/* ===== ABOUT (about.css) ===== */
+
+/* Hero */
+.about-hero{
+  background-image:url("../img/about-hero.jpg");
+}
+
+/* Values */
+.about-values h2{font-size:32px;margin-bottom:40px}
+
+/* Overview 이미지 박스 */
+.about-overview-image{
+  height:240px; display:flex; align-items:center; justify-content:center;
+  color:#94a3b8; border:1px solid var(--border);
+  border-radius:14px; background:#fff;
+}
+
+/* Mission/Story 이미지 */
+.about-mission-image{
+  height:300px; display:flex; align-items:center; justify-content:center;
+  color:#94a3b8; border:1px solid var(--border);
+  border-radius:14px; background:#fff;
+}
+
+/* Global Reach 지도 플레이스홀더 */
+.map-placeholder{
+  background:#e2e8f0; border-radius:12px; height:400px;
+  display:flex; align-items:center; justify-content:center; color:#94a3b8;
+}
+
+/* Light 섹션 */
+.soft{background:var(--soft)}

@@ -1,0 +1,27 @@
+/* ===== SOLUTIONS (solutions.css) ===== */
+
+/* Hero */
+.solutions-hero{
+  background-image:url("../img/solutions-hero.jpg");
+}
+
+/* 코어 솔루션 카드 */
+.solution-card .ph{
+  height:140px; background:#e2e8f0; border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  color:#94a3b8; margin-bottom:14px;
+}
+
+/* 프로젝트 이미지 */
+.project-image{
+  height:280px; display:flex; align-items:center; justify-content:center;
+  color:#94a3b8; background:#fff;
+  border:1px solid var(--border); border-radius:14px;
+}
+
+/* 프로세스 */
+.process h2{font-size:32px; margin-bottom:40px}
+.process .card h3{margin-top:0}
+
+/* CTA 섹션 */
+.cta-inverse{background:var(--brand); color:#fff; text-align:center}

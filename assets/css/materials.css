@@ -1,0 +1,41 @@
+/* ===== MATERIALS (materials.css) ===== */
+
+/* Hero */
+.materials-hero{
+  background-image:url("../img/materials-hero.jpg");
+}
+
+/* 스펙 테이블 */
+.table .row{
+  display:grid; grid-template-columns:220px 1fr; gap:18px;
+  background:#fff; border:1px solid var(--border);
+  border-radius:12px; padding:16px;
+}
+@media(max-width:720px){ .table .row{grid-template-columns:1fr} }
+
+/* 칩 */
+.chip{
+  display:inline-block; background:#eef2f6; border-radius:999px;
+  padding:6px 10px; margin:4px 6px 0 0;
+  font-size:13px; color:#42505a;
+}
+
+/* 갤러리 카드 */
+.finish-card .ph{
+  height:160px; background:#e2e8f0; border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  color:#94a3b8; margin-bottom:12px;
+}
+
+/* QA 이미지 */
+.qa-image{
+  min-height:220px; display:flex; align-items:center; justify-content:center;
+  color:#94a3b8; background:#fff;
+  border:1px solid var(--border); border-radius:14px;
+}
+
+/* 버튼 그룹 */
+.actions-center{
+  display:flex; gap:12px; justify-content:center;
+  flex-wrap:wrap; margin-top:28px
+}

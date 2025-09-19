@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel Vista — Contact</title>
+
+  <!-- Favicons -->
+  <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/contact.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="./index.html" class="logo" aria-label="Steel Vista Home">
+        <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./solutions.html">Solutions</a>
+        <a href="./materials.html">Materials</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero (overlay ON) -->
+  <section class="hero contact-hero has-overlay">
+    <div class="hero-content fade">
+      <h1>Get in Touch</h1>
+      <p>Send your specs or drawings — we’ll reply with a tailored quote.</p>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="section reveal">
+    <div class="container">
+      <form class="contact-form" data-contact action="#" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@company.com">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Project details, specs, or drawings link"></textarea>
+
+        <div class="actions">
+          <button class="btn" type="submit">Send</button>
+          <a class="btn-outline" href="mailto:we.solve@steel-vista.com">Email instead</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact info cards -->
+  <section class="section soft reveal">
+    <div class="container contact-cards">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p class="muted"><a href="mailto:we.solve@steel-vista.com">we.solve@steel-vista.com</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Hours</h3>
+        <p class="muted">Mon–Fri · 05:00–22:00 (KST)</p>
+      </div>
+      <div class="contact-card">
+        <h3>Headquarter</h3>
+        <p class="muted">Yongin, Korea</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map/embed -->
+  <section class="section reveal">
+    <div class="container">
+      <div class="map-embed">
+        <!-- Replace with Google Maps iframe when ready -->
+        <img src="./assets/img/contact-hero.jpg" alt="Map placeholder">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container center">
+      <span class="muted">© <span id="year"></span> Steel Vista Co., Ltd.</span>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/contact.js"></script>
+</body>
+</html>
