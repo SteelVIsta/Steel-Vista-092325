@@ -1,8 +1,75 @@
-/* Contact (통합) */
-.contact-form{max-width:760px;margin:0 auto}
-.field{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff;font-size:15px}
-.contact-actions{display:flex;align-items:center;gap:12px;margin-top:14px}
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-.contact-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
-@media (max-width:1024px){.contact-cards{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:640px){.contact-cards{grid-template-columns:1fr}.contact-actions{flex-direction:column;align-items:stretch}}
+/* =========================================================
+   CONTACT (contact.css) — 통합본
+   - 폼 요소, 카드 그리드, 히어로 유지 + 가독성/간격 개선
+   ========================================================= */
+
+/* Hero */
+.contact-hero {
+  background-image: url("../img/contact-hero.jpg");
+}
+
+/* 폼 래퍼 */
+.contact-form {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* 입력 필드 */
+.contact-form .field {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 15px;
+}
+
+.contact-form .field + .field {
+  margin-top: 12px;
+}
+
+.contact-form textarea.field {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* 제출 영역 */
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* 하단 카드 정보(Email/Hours/HQ) */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-lg);
+  margin-top: 40px;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card h4 {
+  margin: 0 0 8px;
+}
+
+/* 반응형: 태블릿 2열, 모바일 1열 */
+@media (max-width: 1024px) {
+  .contact-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .contact-cards { grid-template-columns: 1fr; }
+  .contact-actions { flex-direction: column; align-items: stretch; }
+}
+
+/* 부드러운 구분 섹션 */
+.soft { background: var(--soft); }

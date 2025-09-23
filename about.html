@@ -1,15 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>About · Steel Vista</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel Vista — About</title>
+
   <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="./assets/css/global.css">
-  <link rel="stylesheet" href="./assets/css/about.css">
+
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/about.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container">
       <a href="./index.html" class="logo" aria-label="Steel Vista Home">
@@ -17,7 +22,7 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
+        <a href="./about.html" class="active">About</a>
         <a href="./solutions.html">Solutions</a>
         <a href="./materials.html">Materials</a>
         <a href="./contact.html">Contact</a>
@@ -25,45 +30,34 @@
     </div>
   </header>
 
-  <section class="hero about-hero has-overlay">
-    <div class="hero-content fade">
-      <h1>Company Overview</h1>
-      <p>Founded 2025 · Yongin, Korea · Architectural & industrial metal solutions.</p>
-    </div>
-  </section>
-
-  <section class="section reveal">
+  <section class="hero-min">
     <div class="container">
-      <div class="about-overview-image">[ Company / Factory / Project Collage ]</div>
-      <p class="about-lead">We connect global projects with Korean material innovation — color stainless, panels, and specialty finishes with clear QA and logistics.</p>
+      <h1>Company Overview</h1>
+      <p class="about-lead muted">
+        Founded: 2025 · Yongin, Korea · Architectural & industrial metal solutions —
+        color stainless steel, panels, premium materials.
+      </p>
+      <div class="ph">[ Company Image Placeholder ]</div>
     </div>
   </section>
 
-  <section class="section soft reveal">
+  <section class="section soft">
     <div class="container">
       <h2 class="center">Our Values</h2>
-      <div class="value-grid" style="margin-top:18px">
-        <div class="value-card"><h4>Speed</h4><p>Quotes in days, delivery in weeks.</p></div>
-        <div class="value-card"><h4>Clarity</h4><p>Transparent specs and documents.</p></div>
-        <div class="value-card"><h4>Reliability</h4><p>Audited partners, tracked shipments.</p></div>
+      <div class="grid grid-3" style="margin-top:18px">
+        <div class="card value-card">
+          <h4>Speed</h4>
+          <p class="muted">Quotes in days, delivery in weeks — not months.</p>
+        </div>
+        <div class="card value-card">
+          <h4>Clarity</h4>
+          <p class="muted">Transparent specs, clear Incoterms, reliable docs.</p>
+        </div>
+        <div class="card value-card">
+          <h4>Reliability</h4>
+          <p class="muted">Audited partners and tracked shipments.</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section reveal">
-    <div class="container grid grid-2" style="align-items:center">
-      <div class="about-mission-image">[ Mission / Story Image ]</div>
-      <div>
-        <h2>Mission & Story</h2>
-        <p class="muted">We source, finish, and deliver materials with practical engineering sense and global trade experience — so your team can build faster with fewer surprises.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section soft reveal">
-    <div class="container">
-      <h2 class="center">Global Reach (Asia-first)</h2>
-      <div class="map-placeholder">[ Korea-centered simple map ]</div>
     </div>
   </section>
 
@@ -74,6 +68,5 @@
   </footer>
 
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/about.js" defer></script>
 </body>
 </html>
