@@ -1,32 +1,103 @@
-/* ===== ABOUT (about.css) ===== */
+/* =========================================================
+   ABOUT (about.css) — 통합본
+   - 기존: 히어로/플레이스홀더/soft 섹션 유지
+   - 추가: value-card 카드 레이아웃, 간격, 반응형
+   ========================================================= */
 
-/* Hero */
-.about-hero{
-  background-image:url("../img/about-hero.jpg");
+/* Hero (기존 유지) */
+.about-hero {
+  background-image: url("../img/about-hero.jpg");
 }
 
-/* Values */
-.about-values h2{font-size:32px;margin-bottom:40px}
-
-/* Overview 이미지 박스 */
-.about-overview-image{
-  height:240px; display:flex; align-items:center; justify-content:center;
-  color:#94a3b8; border:1px solid var(--border);
-  border-radius:14px; background:#fff;
+/* 상단 요약 문단 */
+.about-lead {
+  margin: 6px 0 22px;
+  color: var(--muted);
 }
 
-/* Mission/Story 이미지 */
-.about-mission-image{
-  height:300px; display:flex; align-items:center; justify-content:center;
-  color:#94a3b8; border:1px solid var(--border);
-  border-radius:14px; background:#fff;
+/* Values 헤드라인 (기존 유지) */
+.about-values h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
 }
 
-/* Global Reach 지도 플레이스홀더 */
-.map-placeholder{
-  background:#e2e8f0; border-radius:12px; height:400px;
-  display:flex; align-items:center; justify-content:center; color:#94a3b8;
+/* Overview 이미지 박스 (기존 유지) */
+.about-overview-image {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
 }
 
-/* Light 섹션 */
-.soft{background:var(--soft)}
+/* Mission/Story 이미지 (기존 유지) */
+.about-mission-image {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* Global Reach 지도 플레이스홀더 (기존 유지) */
+.map-placeholder {
+  background: #e2e8f0;
+  border-radius: 12px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+}
+
+/* Light 섹션 (기존 유지) */
+.soft {
+  background: var(--soft);
+}
+
+/* ---------------------------
+   추가: Values 카드 레이아웃
+   --------------------------- */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-lg);
+}
+
+.value-card {
+  padding: 26px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.value-card h4 {
+  margin: 6px 0 6px;
+  font-weight: 700;
+}
+
+.value-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* 반응형: 태블릿에서 2열, 모바일에서 1열 */
+@media (max-width: 1024px) {
+  .value-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .value-grid { grid-template-columns: 1fr; }
+}
+
+/* 섹션 간격 보정 */
+.section.about-top { padding-top: 28px; }
+.section.about-bottom { padding-bottom: 52px; }

@@ -1,28 +1,75 @@
-/* ===== CONTACT (contact.css) ===== */
+/* =========================================================
+   CONTACT (contact.css) — 통합본
+   - 폼 요소, 카드 그리드, 히어로 유지 + 가독성/간격 개선
+   ========================================================= */
 
 /* Hero */
-.contact-hero{
-  background-image:url("../img/contact-hero.jpg");
+.contact-hero {
+  background-image: url("../img/contact-hero.jpg");
 }
 
-/* 폼 컨테이너 */
-.contact-form{max-width:720px;margin:0 auto}
-.contact-form label{display:block;font-weight:600;margin:10px 0 6px}
-.contact-form input,
-.contact-form textarea,
-.contact-form select{
-  width:100%; padding:12px 14px; border-radius:10px;
-  border:1px solid var(--border); background:#fff; color:var(--text);
+/* 폼 래퍼 */
+.contact-form {
+  max-width: 760px;
+  margin: 0 auto;
 }
-.contact-form textarea{min-height:140px; resize:vertical}
-.contact-form .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
-.contact-form .actions .btn{min-width:160px}
 
-/* 연락처 카드 */
-.contact-cards{display:grid; gap:20px; grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.contact-cards{grid-template-columns:1fr}}
-.contact-card{border:1px solid var(--border); border-radius:14px; padding:18px; background:#fff}
+/* 입력 필드 */
+.contact-form .field {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 15px;
+}
 
-/* 지도 임베드 */
-.map-embed{position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--border)}
-.map-embed iframe, .map-embed img{position:absolute; inset:0; width:100%; height:100%; border:0}
+.contact-form .field + .field {
+  margin-top: 12px;
+}
+
+.contact-form textarea.field {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* 제출 영역 */
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* 하단 카드 정보(Email/Hours/HQ) */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-lg);
+  margin-top: 40px;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card h4 {
+  margin: 0 0 8px;
+}
+
+/* 반응형: 태블릿 2열, 모바일 1열 */
+@media (max-width: 1024px) {
+  .contact-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .contact-cards { grid-template-columns: 1fr; }
+  .contact-actions { flex-direction: column; align-items: stretch; }
+}
+
+/* 부드러운 구분 섹션 */
+.soft { background: var(--soft); }
