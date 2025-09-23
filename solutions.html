@@ -4,18 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Steel Vista — Solutions</title>
-
   <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
-
   <link rel="stylesheet" href="./assets/css/global.css" />
   <link rel="stylesheet" href="./assets/css/solutions.css" />
 </head>
 <body>
 
-  <!-- Header (materials와 동일 패턴) -->
-  <header class="site-header">
+  <!-- Header (공통) -->
+  <header>
     <div class="container">
       <a href="./index.html" class="logo" aria-label="Steel Vista Home">
         <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
@@ -23,42 +21,64 @@
       <nav class="nav" aria-label="Primary">
         <a href="./index.html">Home</a>
         <a href="./about.html">About</a>
-        <a href="./solutions.html" class="active">Solutions</a>
+        <a href="./solutions.html">Solutions</a>
         <a href="./materials.html">Materials</a>
         <a href="./contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero-min">
-    <div class="container center">
-      <h1>What We Deliver</h1>
-      <p class="muted">From sourcing to delivery, we simplify your supply chain end-to-end.</p>
+  <section class="hero solutions-hero has-overlay">
+    <div class="hero-content fade">
+      <h1>Our Solutions</h1>
+      <p>From sourcing to delivery, we simplify your supply chain end-to-end.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container grid grid-3">
-      <!-- Fast Sourcing -->
-      <div class="card sol-card">
-        <div class="ph">[ Sourcing Image ]</div>
-        <h3 class="center">Fast Sourcing</h3>
-        <p class="muted center">Asia-wide network to secure materials quickly and competitively.</p>
+  <section class="section reveal">
+    <div class="container">
+      <h2 class="center">What We Deliver</h2>
+      <div class="grid grid-3" style="margin-top:24px">
+        <div class="card solution-card"><div class="ph">[ Sourcing Image ]</div><h3>Fast Sourcing</h3><p class="muted">Asia-wide network to secure materials quickly and competitively.</p></div>
+        <div class="card solution-card"><div class="ph">[ Export Image ]</div><h3>Export & Logistics</h3><p class="muted">DAP/CIF expertise, freight optimization, customs documentation.</p></div>
+        <div class="card solution-card"><div class="ph">[ QA Image ]</div><h3>Quality Assurance</h3><p class="muted">Factory audits, MTCs, and pre-shipment inspections.</p></div>
       </div>
+    </div>
+  </section>
 
-      <!-- Export & Logistics -->
-      <div class="card sol-card">
-        <div class="ph">[ Export Image ]</div>
-        <h3 class="center">Export & Logistics</h3>
-        <p class="muted center">DAP/CIF expertise, freight optimization, customs documentation.</p>
+  <section class="section soft reveal">
+    <div class="container grid grid-2" style="align-items:center">
+      <div class="project-image">[ Project Support Image ]</div>
+      <div>
+        <h2>Project-tailored Support</h2>
+        <ul class="muted">
+          <li>Spec alignment with architects/contractors</li>
+          <li>Surface treatment customization</li>
+          <li>Batch tracking & compliance docs</li>
+        </ul>
       </div>
+    </div>
+  </section>
 
-      <!-- QA -->
-      <div class="card sol-card">
-        <div class="ph">[ QA Image ]</div>
-        <h3 class="center">Quality Assurance</h3>
-        <p class="muted center">Factory audits, mill certs, and pre-shipment inspections.</p>
+  <section class="section reveal process">
+    <div class="container">
+      <h2 class="center">How We Work</h2>
+      <div class="grid grid-3" style="margin-top:24px">
+        <div class="card"><h3>1. Inquiry</h3><p class="muted">Send specs or drawings. We reply in days.</p></div>
+        <div class="card"><h3>2. Confirmation</h3><p class="muted">Transparent terms, pricing, and lead time.</p></div>
+        <div class="card"><h3>3. Execution</h3><p class="muted">QA checks, packing, and shipment tracking.</p></div>
       </div>
+      <div class="center" style="margin-top:28px">
+        <a class="btn" href="./contact.html">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section center cta-inverse" style="background:var(--brand);color:#fff">
+    <div class="container">
+      <h2>Looking for a sourcing partner?</h2>
+      <p class="muted" style="color:#e6f7f9">Let us simplify your next material order.</p>
+      <a class="btn" style="background:#fff;color:var(--brand)" href="./contact.html">Contact Us</a>
     </div>
   </section>
 
@@ -69,5 +89,6 @@
   </footer>
 
   <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/solutions.js"></script>
 </body>
 </html>

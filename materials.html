@@ -4,22 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Steel Vista — Materials</title>
-
-  <!-- Favicons -->
   <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="./assets/css/global.css?v=20250923a">
-  <link rel="stylesheet" href="./assets/css/materials.css?v=20250923a"> 
-
-  <!-- ADDED: 미리불러오기(UX 미세개선) -->
-  <link rel="prefetch" href="./request-sample.html" as="document">
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/materials.css" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header (공통) -->
   <header>
     <div class="container">
       <a href="./index.html" class="logo" aria-label="Steel Vista Home">
@@ -29,13 +22,12 @@
         <a href="./index.html">Home</a>
         <a href="./about.html">About</a>
         <a href="./solutions.html">Solutions</a>
-        <a href="./materials.html" class="active">Materials</a>
+        <a href="./materials.html">Materials</a>
         <a href="./contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero (overlay ON) -->
   <section class="hero materials-hero has-overlay">
     <div class="hero-content fade">
       <h1>Materials & Finishes</h1>
@@ -43,13 +35,11 @@
     </div>
   </section>
 
-  <!-- Spec families -->
   <section class="section soft reveal">
     <div class="container">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px">
         <h2 style="margin:0">Core Families</h2>
-        <!-- ADDED: 샘플 요청 링크를 별도 페이지로 연결 -->
-        <a class="pill" href="./request-sample.html" role="button" aria-label="Request material samples">Request samples</a>
+        <a class="pill" href="./contact.html">Request samples</a>
       </div>
 
       <div class="table">
@@ -87,50 +77,23 @@
     </div>
   </section>
 
-  <!-- Finish gallery -->
   <section class="section reveal">
     <div class="container">
       <h2 class="center">Finish Gallery (placeholders)</h2>
       <div class="grid grid-3">
-        <div class="card finish-card">
-          <div class="ph">[ PVD Emerald ]</div>
-          <h3>PVD Emerald</h3><p class="muted">Mirror #8, anti-fingerprint option.</p>
-        </div>
-        <div class="card finish-card">
-          <div class="ph">[ HL Champagne ]</div>
-          <h3>HL Champagne</h3><p class="muted">Hairline #180, protective film.</p>
-        </div>
-        <div class="card finish-card">
-          <div class="ph">[ Bead-blast Silver ]</div>
-          <h3>Bead-blast Silver</h3><p class="muted">Matte texture, uniform tone.</p>
-        </div>
+        <div class="card finish-card"><div class="ph">[ PVD Emerald ]</div><h3>PVD Emerald</h3><p class="muted">Mirror #8, anti-fingerprint option.</p></div>
+        <div class="card finish-card"><div class="ph">[ HL Champagne ]</div><h3>HL Champagne</h3><p class="muted">Hairline #180, protective film.</p></div>
+        <div class="card finish-card"><div class="ph">[ Bead-blast Silver ]</div><h3>Bead-blast Silver</h3><p class="muted">Matte texture, uniform tone.</p></div>
       </div>
 
-      <div class="actions-center" style="gap:12px;flex-wrap:wrap">
-        <!-- ADDED: 메인 CTA는 별도 페이지로 이동 -->
-        <a class="btn" href="./request-sample.html" role="button" aria-label="Request material samples">Request samples</a>
-
-        <!-- ADDED: 스펙시트 다운로드 안정화 
-             - 파일 경로/이름 확인: assets/specsheet.pdf 가 맞으면 그대로, 아니면 실제 파일명으로 바꿔줘 -->
-        <a class="btn-outline" 
-           href="./assets/specsheet.pdf" 
-           target="_blank" 
-           rel="noopener"
-           aria-label="Open specification sheet (PDF)">
-          Download spec sheet
-        </a>
-
-        <!-- ADDED: 이메일 제목/본문 자동 채움 -->
-        <a class="btn-outline" 
-           href="mailto:we.solve@steel-vista.com?subject=Material%20Specs%20Request&body=Hi%20Steel%20Vista%2C%0A%0AI%27d%20like%20the%20spec%20sheet%20for%3A%0A-%20Grade%2FFinish%3A%20%5B304%2F316%2F430%2C%20HL%2FBA%2FMirror%2C%20etc.%5D%0A-%20Thickness%3A%0A-%20Size%3A%0A-%20Quantity%3A%0A-%20Required%20delivery%3A%0A%0ACompany%3A%0AName%3A%0AEmail%3A%0ACountry%3A%0A%0AThank%20you."
-           aria-label="Email specs">
-          Email specs
-        </a>
+      <div class="actions-center">
+        <a class="btn" href="./contact.html">Request samples</a>
+        <a class="btn-outline" href="./assets/specsheet.pdf">Download spec sheet</a>
+        <a class="btn-outline" href="mailto:we.solve@steel-vista.com">Email specs</a>
       </div>
     </div>
   </section>
 
-  <!-- QA -->
   <section class="section soft reveal">
     <div class="container grid grid-2" style="align-items:center">
       <div class="qa-image">[ Packaging / Palletizing Photo ]</div>
@@ -146,14 +109,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container center">
       <span class="muted">© <span id="year"></span> Steel Vista Co., Ltd.</span>
     </div>
   </footer>
 
-  <!-- JS -->
   <script src="./assets/js/main.js"></script>
   <script src="./assets/js/materials.js"></script>
 </body>
