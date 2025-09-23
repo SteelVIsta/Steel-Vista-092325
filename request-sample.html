@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Request Samples · Steel Vista</title>
+  <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
+  <link rel="stylesheet" href="./assets/css/global.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="./index.html" class="logo" aria-label="Steel Vista Home">
+        <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./solutions.html">Solutions</a>
+        <a href="./materials.html" class="active">Materials</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-min">
+    <div class="container center">
+      <h1>Request Samples</h1>
+      <p class="muted">Tell us what you need — we’ll confirm specs, availability, and lead time.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <form id="sampleForm" class="card" style="padding:22px;display:grid;gap:12px">
+        <div class="grid grid-2">
+          <select class="input" name="material" required>
+            <option value="" disabled selected>Material</option>
+            <option>Stainless Steel (304 / 316 / 430)</option>
+            <option>Aluminum (1100 / 5052 / 6061)</option>
+            <option>Other Alloys</option>
+          </select>
+          <select class="input" name="finish" required>
+            <option value="" disabled selected>Finish</option>
+            <option>BA</option><option>HL</option><option>Mirror</option><option>PVD</option><option>Mill</option>
+          </select>
+        </div>
+        <div class="grid grid-2">
+          <input class="input" name="thickness" placeholder="Thickness (mm)" required>
+          <input class="input" name="size" placeholder="Size (e.g. 1219×2438mm)" required>
+        </div>
+        <div class="grid grid-2">
+          <input class="input" name="qty" placeholder="Quantity (e.g. 3 sheets)" required>
+          <select class="input" name="leadtime" required>
+            <option value="" disabled selected>Desired Lead Time</option>
+            <option>Urgent (under 2 weeks)</option>
+            <option>Standard (3–5 weeks)</option>
+            <option>Flexible (6+ weeks)</option>
+          </select>
+        </div>
+        <textarea class="input" name="notes" placeholder="Standards, packaging, delivery city…"></textarea>
+        <div class="grid grid-2">
+          <input class="input" name="name" placeholder="Your name" required>
+          <input class="input" name="email" type="email" placeholder="you@company.com" required>
+        </div>
+        <div class="actions-center" style="margin-top:6px">
+          <a class="btn-outline" href="./materials.html">Back</a>
+          <button class="btn" type="submit">Send Request</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+  document.getElementById('sampleForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const d=new FormData(this);
+    const lines=[
+      "Request Type: Sample",
+      `Material: ${d.get('material')}`, `Finish: ${d.get('finish')}`,
+      `Thickness: ${d.get('thickness')}`, `Size: ${d.get('size')}`,
+      `Quantity: ${d.get('qty')}`, `Lead Time: ${d.get('leadtime')}`,
+      `Name: ${d.get('name')}`, `Email: ${d.get('email')}`,
+      "", `Notes: ${d.get('notes')||'-'}`
+    ];
+    location.href=`mailto:we.solve@steel-vista.com?subject=${encodeURIComponent('Sample Request – Steel Vista')}&body=${encodeURIComponent(lines.join('\n'))}`;
+  });
+  </script>
+</body>
+</html>
