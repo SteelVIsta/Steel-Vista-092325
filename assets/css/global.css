@@ -63,3 +63,10 @@ footer a{color:var(--brand)}
 .fade.in{opacity:1;transform:none}
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s ease}
 .reveal.is-visible{opacity:1;transform:none}
+
+/* ===== materials CTA 보완 유틸 ===== */
+.actions-center { gap: 12px; }         /* 혹시 중복 선언돼도 동일 값이면 OK */
+.btn + .btn,
+.btn + .btn-outline,
+.btn-outline + .btn,
+.btn-outline + .btn-outline { margin-left: 0; } /* 인접 margin 충돌 방지 */

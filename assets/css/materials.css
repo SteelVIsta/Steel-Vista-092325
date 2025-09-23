@@ -1,41 +1,160 @@
-/* ===== MATERIALS (materials.css) ===== */
+/* =========================================
+   Steel Vista — materials.css
+   페이지 전용 스타일
+   ========================================= */
 
-/* Hero */
-.materials-hero{
-  background-image:url("../img/materials-hero.jpg");
+/* Hero (Materials) */
+.materials-hero {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.0) 0%,
+      rgba(0,0,0,0.25) 100%
+    ),
+    url("../img/hero-architect.jpg");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  min-height: 46vh;
+}
+.materials-hero.has-overlay::before { /* global overlay와 중첩 보호 */
+  opacity: .35;
+}
+
+/* 섹션 */
+.section.soft {
+  background: rgba(255,255,255,0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 /* 스펙 테이블 */
-.table .row{
-  display:grid; grid-template-columns:220px 1fr; gap:18px;
-  background:#fff; border:1px solid var(--border);
-  border-radius:12px; padding:16px;
+.table {
+  display: grid;
+  gap: 12px;
 }
-@media(max-width:720px){ .table .row{grid-template-columns:1fr} }
+.table .row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--border, #e6e6e6);
+  border-radius: 12px;
+  padding: 12px 14px;
+  align-items: start;
+}
+.table .row strong { color: #111; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  margin: 0 6px 6px 0;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid #e5e7eb;
+  font-size: 13px;
+  line-height: 1;
+  color: #0f172a;
+}
 
-/* 칩 */
-.chip{
-  display:inline-block; background:#eef2f6; border-radius:999px;
-  padding:6px 10px; margin:4px 6px 0 0;
-  font-size:13px; color:#42505a;
+/* 카드/플레이스홀더 */
+.grid { display: grid; gap: 18px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 920px){
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+.card.finish-card {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--border, #e6e6e6);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  padding: 18px;
+  text-align: center;
+}
+.card.finish-card .ph {
+  height: 140px;
+  border-radius: 12px;
+  background: #e8eef5;
+  color: #7b8aa0;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-/* 갤러리 카드 */
-.finish-card .ph{
-  height:160px; background:#e2e8f0; border-radius:12px;
-  display:flex; align-items:center; justify-content:center;
-  color:#94a3b8; margin-bottom:12px;
+/* ================================
+   CTA 버튼 정렬/간격 — 핵심 수정
+   ================================ */
+
+/* 가운데 정렬한 버튼 그룹 */
+.actions-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;              /* 버튼 간 간격 */
+  flex-wrap: wrap;        /* 줄바꿈 시 자연스럽게 */
+  margin-top: 18px;
 }
 
-/* QA 이미지 */
-.qa-image{
-  min-height:220px; display:flex; align-items:center; justify-content:center;
-  color:#94a3b8; background:#fff;
-  border:1px solid var(--border); border-radius:14px;
+/* 버튼 기본(글로벌 .btn/.btn-outline이 있다면 보완) */
+.btn,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-/* 버튼 그룹 */
-.actions-center{
-  display:flex; gap:12px; justify-content:center;
-  flex-wrap:wrap; margin-top:28px
+/* 채움 버튼 */
+.btn {
+  background: var(--teal, #107d86);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 8px 20px rgba(16,125,134,.18);
 }
+.btn:hover { filter: brightness(1.05); }
+
+/* 외곽선 버튼 */
+.btn-outline {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #0f172a;
+}
+.btn-outline:hover { background: #f8fafc; }
+
+/* “Request samples” pill 버튼(상단) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: rgba(16,125,134,.12);
+  color: #0f3e43;
+  border: 1px solid rgba(16,125,134,.25);
+  text-decoration: none;
+}
+.pill:hover { background: rgba(16,125,134,.18); }
+
+/* QA 이미지 가짜 영역 */
+.qa-image {
+  background: #e8eef5;
+  border: 1px solid #dbe5ef;
+  border-radius: 12px;
+  height: 220px;
+  display:flex;align-items:center;justify-content:center;
+  color:#7b8aa0;
+}
+
+/* 가독성 */
+.center { text-align: center; }
+.muted { color: #6b7280; }
