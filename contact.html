@@ -1,16 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact · Steel Vista</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel Vista — Contact</title>
+
+  <!-- Favicons -->
   <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="./assets/css/global.css">
-  <link rel="stylesheet" href="./assets/css/contact.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/contact.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- Header -->
+  <header>
     <div class="container">
       <a href="./index.html" class="logo" aria-label="Steel Vista Home">
         <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
@@ -25,43 +32,70 @@
     </div>
   </header>
 
+  <!-- Hero (simple) -->
   <section class="hero has-overlay">
-    <div class="hero-content fade">
-      <h1>Get in Touch</h1>
-      <p>Send specs or drawings — we’ll reply in days.</p>
+    <div class="hero-content">
+      <h1>Contact</h1>
+      <p>Tell us about your project or sample requirements.</p>
     </div>
-    <div class="hero-bg" style="background-image:url('./assets/img/hero-contact.jpg')" aria-hidden="true"></div>
   </section>
 
+  <!-- Contact -->
   <section class="section reveal">
-    <div class="container grid grid-2" style="align-items:start">
-      <div class="card" style="padding:22px">
-        <form class="contact-form" action="https://docs.google.com/forms/d/e/REPLACE_FORM_ID/formResponse" method="POST" target="_blank">
-          <input class="field" name="entry.name" type="text" placeholder="Your name" required>
-          <input class="field" name="entry.email" type="email" placeholder="you@company.com" required>
-          <textarea class="field" name="entry.message" placeholder="Project details, specs, or drawings link"></textarea>
-          <div class="contact-actions">
-            <button class="btn" type="submit">Send</button>
-            <a class="btn-outline" href="mailto:we.solve@steel-vista.com?subject=Steel%20Vista%20Inquiry">Email instead</a>
+    <div class="container contact-wrap">
+      <div class="contact-card">
+        <form action="mailto:we.solve@steel-vista.com" method="post" enctype="text/plain">
+          <div class="row" style="margin-bottom:12px">
+            <input type="text" name="Name" placeholder="Your name" required>
+          </div>
+          <div class="row" style="margin-bottom:12px">
+            <input type="email" name="Email" placeholder="you@company.com" required>
+          </div>
+          <div class="row" style="margin-bottom:12px">
+            <textarea name="Message" placeholder="Project details, specs, or drawings link" required></textarea>
+          </div>
+          <div class="row" style="gap:8px">
+            <button type="submit" class="btn">Send</button>
+            <a class="btn-outline" role="button" data-mailto>Email instead</a>
           </div>
         </form>
       </div>
 
-      <div class="contact-cards">
-        <div class="contact-card"><h4>Email</h4><p class="muted">we.solve@steel-vista.com</p></div>
-        <div class="contact-card"><h4>Hours</h4><p class="muted">Mon–Fri · 05:00–22:00 (KST)</p></div>
-        <div class="contact-card"><h4>Headquarter</h4><p class="muted">Yongin, Korea</p></div>
+      <div class="contact-card">
+        <h3>Quick Links</h3>
+        <ul class="muted" style="padding-left:18px; margin:10px 0 0">
+          <li><a href="./materials.html">Request samples</a></li>
+          <li><a href="./solutions.html">Start a project</a></li>
+          <li><a href="mailto:we.solve@steel-vista.com">we.solve@steel-vista.com</a></li>
+        </ul>
+      </div>
+
+      <div class="info-grid" style="grid-column:1 / -1">
+        <div class="info">
+          <h4>Email</h4>
+          <p class="muted">we.solve@steel-vista.com</p>
+        </div>
+        <div class="info">
+          <h4>Hours</h4>
+          <p class="muted">Mon–Fri · 05:00–22:00 (KST)</p>
+        </div>
+        <div class="info">
+          <h4>Headquarter</h4>
+          <p class="muted">Yongin, Korea</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container center">
       <span class="muted">© <span id="year"></span> Steel Vista Co., Ltd.</span>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/contact.js" defer></script>
+  <script src="./assets/js/contact.js"></script>
 </body>
 </html>

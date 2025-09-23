@@ -1,16 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Steel Vista · Korean Building Materials</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel Vista — Korean Building Innovation</title>
+
+  <!-- Favicons -->
   <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="./assets/css/global.css">
-  <link rel="stylesheet" href="./assets/css/home.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/home.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- Header -->
+  <header>
     <div class="container">
       <a href="./index.html" class="logo" aria-label="Steel Vista Home">
         <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
@@ -25,57 +32,76 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero has-overlay">
-    <div class="hero-content fade">
-      <h1>Your Bridge to Korean Building Innovation</h1>
-      <p>Architectural metals, finishes, and sourcing — fast, clear, reliable.</p>
-      <div class="hero-actions">
-        <a class="btn" href="./solutions.html">Start a Project</a>
-        <a class="btn-outline" href="./materials.html">See Materials</a>
+    <div class="hero-content">
+      <div class="container">
+        <div class="home-lead">
+          <h1>Your Bridge to Korean Building Innovation</h1>
+          <p>Architectural metals, finishes, and sourcing — fast, clear, reliable.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="./contact.html" aria-label="Start a Project">Start a Project</a>
+            <a class="btn-outline" href="./materials.html" aria-label="See Materials">See Materials</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-bg" style="background-image:url('./assets/img/hero-home.jpg')" aria-hidden="true"></div>
   </section>
 
+  <!-- Why choose -->
   <section class="section reveal">
-    <div class="container center">
-      <h2>Why Choose Steel Vista?</h2>
-      <div class="grid grid-3" style="margin-top:16px">
-        <div class="card"><h3>Speed</h3><p class="muted">Quotes in days, delivery in weeks — not months.</p></div>
-        <div class="card"><h3>Clarity</h3><p class="muted">Specs, Incoterms, and QA docs you can trust.</p></div>
-        <div class="card"><h3>Reliability</h3><p class="muted">Audited partners and tracked shipments.</p></div>
+    <div class="container">
+      <h2 class="center">Why Choose Steel Vista?</h2>
+      <div class="features">
+        <div class="feature reveal">
+          <h3>Speed</h3>
+          <p>Quotes in days, delivery in weeks — not months.</p>
+        </div>
+        <div class="feature reveal">
+          <h3>Clarity</h3>
+          <p>Specs, Incoterms, and QA docs you can trust.</p>
+        </div>
+        <div class="feature reveal">
+          <h3>Reliability</h3>
+          <p>Audited partners and tracked shipments.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Materials preview -->
   <section class="section soft reveal">
     <div class="container">
       <h2 class="center">Materials & Finishes</h2>
-      <div class="grid grid-3" style="margin-top:16px">
-        <div class="card"><div class="ph">[ PVD Emerald ]</div><p class="center muted">Mirror #8 · PVD</p></div>
-        <div class="card"><div class="ph">[ HL Champagne ]</div><p class="center muted">Hairline #180</p></div>
-        <div class="card"><div class="ph">[ Bead-blast Silver ]</div><p class="center muted">Matte Texture</p></div>
+      <div class="grid-3">
+        <div class="card finish-card">
+          <div class="ph">[ PVD Emerald ]</div>
+          <div class="caption">Mirror #8 · PVD</div>
+        </div>
+        <div class="card finish-card">
+          <div class="ph">[ HL Champagne ]</div>
+          <div class="caption">Hairline #180</div>
+        </div>
+        <div class="card finish-card">
+          <div class="ph">[ Bead-blast Silver ]</div>
+          <div class="caption">Matte Texture</div>
+        </div>
       </div>
-      <div class="center" style="margin-top:16px">
-        <a class="btn" href="./materials.html">See All Materials</a>
-      </div>
+      <p class="center" style="margin-top:16px">
+        <a class="pill" href="./materials.html">See All Materials</a>
+      </p>
     </div>
   </section>
 
-  <section class="cta-strip">
-    <div class="container strip-inner">
-      <h3>Ready to start your project?</h3>
-      <a class="btn" href="./start-project.html">Start a Project</a>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
     <div class="container center">
       <span class="muted">© <span id="year"></span> Steel Vista Co., Ltd.</span>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/home.js" defer></script>
+  <script src="./assets/js/home.js"></script>
 </body>
 </html>

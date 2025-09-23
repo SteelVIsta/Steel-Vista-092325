@@ -1,16 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>About · Steel Vista</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel Vista — About</title>
+
+  <!-- Favicons -->
   <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="./assets/css/global.css">
-  <link rel="stylesheet" href="./assets/css/about.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/about.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- Header -->
+  <header>
     <div class="container">
       <a href="./index.html" class="logo" aria-label="Steel Vista Home">
         <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
@@ -25,56 +32,64 @@
     </div>
   </header>
 
-  <section class="hero has-overlay">
-    <div class="hero-content fade">
+  <!-- Hero -->
+  <section class="hero about-hero has-overlay">
+    <div class="hero-content">
       <h1>Company Overview</h1>
-      <p>Founded 2025 · Yongin, Korea · Architectural & industrial metal solutions.</p>
+      <p>Founded: 2025 · Yongin, Korea · Buyer-first, export-ready.</p>
     </div>
-    <div class="hero-bg" style="background-image:url('./assets/img/hero-about.jpg')" aria-hidden="true"></div>
   </section>
 
+  <!-- Overview -->
   <section class="section reveal">
     <div class="container">
-      <div class="about-overview-image">[ Company / Factory / Project Collage ]</div>
-      <p class="about-lead">We connect global projects with Korean material innovation — color stainless, panels, and specialty finishes with clear QA and logistics.</p>
+      <div class="about-overview-image">[ Company Image Placeholder ]</div>
+      <ul class="muted" style="margin-top:14px">
+        <li><b>Focus:</b> Architectural & industrial metal solutions — color stainless, panels, premium materials</li>
+        <li><b>Edge:</b> Fast sourcing & export know-how · Reliable partner network</li>
+        <li><b>Email:</b> we.solve@steel-vista.com</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section soft reveal">
+  <!-- Values -->
+  <section class="section soft reveal about-values">
     <div class="container">
       <h2 class="center">Our Values</h2>
-      <div class="value-grid" style="margin-top:18px">
-        <div class="value-card"><h4>Speed</h4><p>Quotes in days, delivery in weeks.</p></div>
-        <div class="value-card"><h4>Clarity</h4><p>Transparent specs and documents.</p></div>
-        <div class="value-card"><h4>Reliability</h4><p>Audited partners, tracked shipments.</p></div>
+      <div class="values-grid">
+        <div class="value"><h3>Speed</h3><p class="muted">Quotes in days — delivery in weeks.</p></div>
+        <div class="value"><h3>Clarity</h3><p class="muted">Clear specs, Incoterms, QA docs.</p></div>
+        <div class="value"><h3>Reliability</h3><p class="muted">Audited partners, tracked shipments.</p></div>
       </div>
     </div>
   </section>
 
+  <!-- Mission / Story -->
   <section class="section reveal">
-    <div class="container grid grid-2" style="align-items:center">
-      <div class="about-mission-image">[ Mission / Story Image ]</div>
-      <div>
-        <h2>Mission & Story</h2>
-        <p class="muted">We source, finish, and deliver materials with practical engineering sense and global trade experience — so your team can build faster with fewer surprises.</p>
-      </div>
+    <div class="container">
+      <h2 class="center">Mission & Story</h2>
+      <div class="about-mission-image">[ Mission/Story Image ]</div>
+      <p class="muted" style="margin-top:12px">We connect overseas buyers with innovative Korean building materials — making global sourcing simple and dependable.</p>
     </div>
   </section>
 
+  <!-- Global Reach -->
   <section class="section soft reveal">
     <div class="container">
-      <h2 class="center">Global Reach (Asia-first)</h2>
-      <div class="map-placeholder">[ Korea-centered simple map ]</div>
+      <h2 class="center">Global Reach</h2>
+      <div class="map-placeholder">[ Map Placeholder ]</div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container center">
       <span class="muted">© <span id="year"></span> Steel Vista Co., Ltd.</span>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/about.js" defer></script>
+  <script src="./assets/js/about.js"></script>
 </body>
 </html>

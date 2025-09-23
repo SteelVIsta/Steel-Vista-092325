@@ -1,39 +1,48 @@
-/* Steel Vista — main.js */
-const $=(s,r=document)=>r.querySelector(s);
-const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+/* ===================================
+   MAIN JS (9/19 full restore flavor)
+   - sticky header blur (CSS handles)
+   - active nav highlighting
+   - current year in footer
+   - smooth anchor scroll
+   - intersection-based reveal
+   =================================== */
 
-function currentPage(){
-  const f = location.pathname.split('/').pop();
-  return (f===""?"index.html":f).toLowerCase();
-}
-function setActiveNav(){
-  const map={
-    "index.html":"Home","about.html":"About","solutions.html":"Solutions",
-    "materials.html":"Materials","contact.html":"Contact",
-    "request-sample.html":"Materials","start-project.html":"Solutions"
-  };
-  const active = map[currentPage()]||"Home";
-  $$(".nav a").forEach(a=>{
-    a.classList.toggle("active", a.textContent.trim().toLowerCase()===active.toLowerCase());
+(function(){
+  // Active nav by pathname
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav a").forEach(a=>{
+    const href = a.getAttribute("href");
+    if ((path === "" && href.endsWith("index.html")) || href.endsWith(path)) {
+      a.classList.add("active");
+    }
   });
-}
-function bindReveals(){
-  const t=$$(".fade,.reveal");
-  if(!t.length) return;
-  const io=new IntersectionObserver(es=>{
-    es.forEach(e=>{
-      if(!e.isIntersecting) return;
-      const el=e.target;
-      if(el.classList.contains("fade")) el.classList.add("in");
-      if(el.classList.contains("reveal")) el.classList.add("is-visible");
-      io.unobserve(el);
-    });
-  },{threshold:.12});
-  t.forEach(el=>io.observe(el));
-}
-function setYear(){const y=$("#year"); if(y) y.textContent=new Date().getFullYear();}
-function ensureLazy(){ $$("img").forEach(i=>{ if(!i.loading) i.loading="lazy"; }); }
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  setActiveNav(); bindReveals(); setYear(); ensureLazy();
-});
+  // Footer year
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Smooth scroll for same-page anchors
+  document.addEventListener("click", (e)=>{
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute("href");
+    const el = document.querySelector(id);
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  // Scroll reveal
+  const revealEls = [...document.querySelectorAll(".reveal")];
+  if (revealEls.length){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if (entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.16});
+    revealEls.forEach(el=>io.observe(el));
+  }
+})();

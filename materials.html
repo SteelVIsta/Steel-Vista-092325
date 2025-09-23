@@ -1,16 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Materials · Steel Vista</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel Vista — Materials</title>
+
+  <!-- Favicons -->
   <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="./assets/css/global.css">
-  <link rel="stylesheet" href="./assets/css/materials.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/materials.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- Header -->
+  <header>
     <div class="container">
       <a href="./index.html" class="logo" aria-label="Steel Vista Home">
         <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
@@ -25,19 +32,20 @@
     </div>
   </header>
 
-  <section class="hero has-overlay">
-    <div class="hero-content fade">
+  <!-- Hero -->
+  <section class="hero materials-hero has-overlay">
+    <div class="hero-content">
       <h1>Materials & Finishes</h1>
       <p>Common specs we handle. Custom alloys and surface treatments on request.</p>
     </div>
-    <div class="hero-bg" style="background-image:url('./assets/img/hero-materials.jpg')" aria-hidden="true"></div>
   </section>
 
+  <!-- Spec families -->
   <section class="section soft reveal">
     <div class="container">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px">
         <h2 style="margin:0">Core Families</h2>
-        <a class="pill" href="./request-sample.html" role="button">Request samples</a>
+        <a class="pill" href="./contact.html">Request samples</a>
       </div>
 
       <div class="table">
@@ -75,30 +83,58 @@
     </div>
   </section>
 
-  <section class="section reveal">
+  <!-- Finish gallery -->
+  <section id="finish-gallery" class="section reveal">
     <div class="container">
       <h2 class="center">Finish Gallery (placeholders)</h2>
-      <div class="grid grid-3" style="margin-top:16px">
-        <div class="card finish-card"><div class="ph">[ PVD Emerald ]</div><h3 class="center">PVD Emerald</h3><p class="muted center">Mirror #8, anti-fingerprint option.</p></div>
-        <div class="card finish-card"><div class="ph">[ HL Champagne ]</div><h3 class="center">HL Champagne</h3><p class="muted center">Hairline #180, protective film.</p></div>
-        <div class="card finish-card"><div class="ph">[ Bead-blast Silver ]</div><h3 class="center">Bead-blast Silver</h3><p class="muted center">Matte texture, uniform tone.</p></div>
+      <div class="grid-3">
+        <div class="card finish-card">
+          <div class="ph">[ PVD Emerald ]</div>
+          <h3>PVD Emerald</h3><p class="muted">Mirror #8, anti-fingerprint option.</p>
+        </div>
+        <div class="card finish-card">
+          <div class="ph">[ HL Champagne ]</div>
+          <h3>HL Champagne</h3><p class="muted">Hairline #180, protective film.</p>
+        </div>
+        <div class="card finish-card">
+          <div class="ph">[ Bead-blast Silver ]</div>
+          <h3>Bead-blast Silver</h3><p class="muted">Matte texture, uniform tone.</p>
+        </div>
       </div>
 
-      <div class="actions-center" style="margin-top:18px">
-        <a class="btn" href="./request-sample.html">Request samples</a>
-        <a class="btn-outline" href="./assets/specsheet.pdf" target="_blank" rel="noopener">Download spec sheet</a>
-        <a class="btn-outline" href="mailto:we.solve@steel-vista.com?subject=Material%20Specs%20Request">Email specs</a>
+      <div class="actions-center">
+        <a class="btn" href="./contact.html">Request samples</a>
+        <a class="btn-outline" href="./assets/specsheet.pdf">Download spec sheet</a>
+        <a class="btn-outline" href="mailto:we.solve@steel-vista.com">Email specs</a>
       </div>
     </div>
   </section>
 
+  <!-- QA -->
+  <section class="section soft reveal">
+    <div class="container grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+      <div class="qa-image">[ Packaging / Palletizing Photo ]</div>
+      <div>
+        <h2>QA & Documentation</h2>
+        <ul class="muted">
+          <li>Factory audit & lot-based traceability</li>
+          <li>Mill test certificate (EN/ASTM)</li>
+          <li>Pre-shipment dimensional & surface inspection</li>
+          <li>Packing list with photo evidence</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container center">
       <span class="muted">© <span id="year"></span> Steel Vista Co., Ltd.</span>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/materials.js" defer></script>
+  <script src="./assets/js/materials.js"></script>
 </body>
 </html>
