@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Start a Project · Steel Vista</title>
+  <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" sizes="180x180">
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <link rel="stylesheet" href="./assets/css/start-project.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="./index.html" class="logo" aria-label="Steel Vista Home">
+        <img class="logo-img" src="./assets/img/logo-full.png" alt="STEEL VISTA">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./solutions.html" class="active">Solutions</a>
+        <a href="./materials.html">Materials</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero has-overlay">
+    <div class="hero-content fade">
+      <h1>Start a Project</h1>
+      <p>Share your scope and timeline — we’ll reply with a plan and quote.</p>
+    </div>
+    <div class="hero-bg" style="background-image:url('./assets/img/hero-solutions.jpg')" aria-hidden="true"></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <form id="projectForm" class="card project-form">
+        <div class="grid grid-2">
+          <input class="input" name="country" placeholder="Project country" required>
+          <input class="input" name="city" placeholder="City (optional)">
+        </div>
+        <div class="grid grid-2">
+          <input class="input" type="date" name="start" required>
+          <input class="input" type="date" name="end" required>
+        </div>
+        <div class="grid grid-2">
+          <input class="input" name="materials" placeholder="Main materials (e.g. 316 BA, PVD Gold)" required>
+          <input class="input" name="qty" placeholder="Estimated quantity (e.g. 20 tons)">
+        </div>
+        <textarea class="input" name="reqs" placeholder="Key requirements, certifications, packaging, delivery…"></textarea>
+        <div class="grid grid-2">
+          <input class="input" name="name" placeholder="Your name" required>
+          <input class="input" name="email" type="email" placeholder="you@company.com" required>
+        </div>
+        <div class="actions-center" style="margin-top:6px">
+          <a class="btn-outline" href="./solutions.html">Back</a>
+          <button class="btn" type="submit">Send Brief</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container center">
+      <span class="muted">© <span id="year"></span> Steel Vista Co., Ltd.</span>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/start-project.js" defer></script>
+</body>
+</html>
