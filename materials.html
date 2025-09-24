@@ -13,6 +13,9 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/global.css" />
   <link rel="stylesheet" href="./assets/css/materials.css" />
+
+  <!-- 성능: 다음 페이지 미리 로드(선택) -->
+  <link rel="prefetch" href="./request-sample.html" as="document">
 </head>
 <body>
 
@@ -26,15 +29,15 @@
         <a href="./index.html">Home</a>
         <a href="./about.html">About</a>
         <a href="./solutions.html">Solutions</a>
-        <a href="./materials.html">Materials</a>
+        <a href="./materials.html" class="active">Materials</a>
         <a href="./contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero (overlay ON) -->
   <section class="hero materials-hero has-overlay">
-    <div class="hero-content">
+    <div class="hero-content fade">
       <h1>Materials & Finishes</h1>
       <p>Common specs we handle. Custom alloys and surface treatments on request.</p>
     </div>
@@ -45,7 +48,11 @@
     <div class="container">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px">
         <h2 style="margin:0">Core Families</h2>
-        <a class="pill" href="./contact.html">Request samples</a>
+
+        <!-- ✅ 변경: CTA가 request-sample.html로 이동 -->
+        <a class="pill" href="./request-sample.html" role="button" aria-label="Request material samples">
+          Request samples
+        </a>
       </div>
 
       <div class="table">
@@ -84,10 +91,10 @@
   </section>
 
   <!-- Finish gallery -->
-  <section id="finish-gallery" class="section reveal">
+  <section class="section reveal">
     <div class="container">
       <h2 class="center">Finish Gallery (placeholders)</h2>
-      <div class="grid-3">
+      <div class="grid grid-3">
         <div class="card finish-card">
           <div class="ph">[ PVD Emerald ]</div>
           <h3>PVD Emerald</h3><p class="muted">Mirror #8, anti-fingerprint option.</p>
@@ -103,16 +110,19 @@
       </div>
 
       <div class="actions-center">
-        <a class="btn" href="./contact.html">Request samples</a>
+        <!-- ✅ 변경: 메인 CTA도 request-sample.html로 이동 -->
+        <a class="btn" href="./request-sample.html">Request samples</a>
+
+        <!-- 보조 액션(원하면 유지/삭제) -->
         <a class="btn-outline" href="./assets/specsheet.pdf">Download spec sheet</a>
-        <a class="btn-outline" href="mailto:we.solve@steel-vista.com">Email specs</a>
+        <a class="btn-outline" href="mailto:we.solve@steel-vista.com?subject=Material%20Specs%20Enquiry">Email specs</a>
       </div>
     </div>
   </section>
 
   <!-- QA -->
   <section class="section soft reveal">
-    <div class="container grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+    <div class="container grid grid-2" style="align-items:center">
       <div class="qa-image">[ Packaging / Palletizing Photo ]</div>
       <div>
         <h2>QA & Documentation</h2>
