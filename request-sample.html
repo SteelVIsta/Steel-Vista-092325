@@ -2,151 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Request Material Samples</title>
   <link rel="stylesheet" href="./assets/css/global.css" />
   <style>
-    body{background:#f7f8fa}
-    .container{max-width:860px;margin:48px auto;padding:0 16px}
-    .card{background:#fff;border:1px solid var(--border,#e5e7eb);border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.04);padding:22px}
-    h1{margin:0 0 16px}
-    .grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-    .grid-1{grid-template-columns:1fr}
-    label{display:block;font-weight:600;margin-bottom:6px}
-    input,select,textarea{width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:10px;font-size:14px;background:#fff}
-    textarea{min-height:120px;resize:vertical}
-    .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-    .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
-    .btn{background:#0ea5a5;color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
-    .muted{color:#6b7280;font-size:13px}
-    @media (max-width:720px){.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+    body { font-family: sans-serif; background:#f8fafc; margin:0; padding:40px; }
+    .form-wrapper {
+      max-width: 800px; margin:0 auto; padding:32px;
+      background:#fff; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,.08);
+    }
+    h1 { margin-top:0; font-size:24px; margin-bottom:8px; }
+    p { margin-top:0; color:#555; margin-bottom:24px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    label { display:block; font-size:14px; margin-bottom:6px; }
+    input, select, textarea {
+      width:100%; padding:10px 12px; font-size:14px;
+      border:1px solid #cbd5e1; border-radius:6px; box-sizing:border-box;
+    }
+    textarea { resize:vertical; min-height:80px; }
+    .full { grid-column:1 / -1; }
+    button {
+      background:#0a7a63; color:#fff; border:none;
+      padding:12px 20px; border-radius:6px; cursor:pointer; font-size:15px;
+    }
+    button:disabled { opacity:0.6; cursor:not-allowed; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <h1>Request Material Samples</h1>
-      <p class="muted">Choose your specs and submit. We’ll reply with availability and lead time.</p>
+  <div class="form-wrapper">
+    <h1>Request Material Samples</h1>
+    <p>Choose your specs and submit. We’ll reply with availability and lead time.</p>
 
-      <!-- 🔗 워커 엔드포인트로 바꾸세요 -->
-      <form id="reqForm" action="https://request-sample.damian-kyungho-ha.workers.dev" method="POST">
-        <div class="grid">
-          <div>
-            <label>Company</label>
-            <input name="company" required />
-          </div>
-          <div>
-            <label>Contact name</label>
-            <input name="name" />
-          </div>
-          <div>
-            <label>Email</label>
-            <input type="email" name="email" required />
-          </div>
-          <div>
-            <label>Country</label>
-            <input name="country" />
-          </div>
+    <form>
+      <div class="grid">
+        <div>
+          <label>Company</label>
+          <input type="text" name="company" required />
         </div>
-
-        <hr style="border:0;border-top:1px solid #eee;margin:18px 0">
-
-        <div class="grid">
-          <div>
-            <label>Material</label>
-            <select name="material">
-              <option>Stainless Steel</option>
-              <option>Aluminum</option>
-              <option>Carbon Steel</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label>Grade</label>
-            <select name="grade">
-              <option>304</option><option>316</option><option>430</option>
-              <option>5052</option><option>6061</option><option>Other</option>
-            </select>
-          </div>
+        <div>
+          <label>Contact name</label>
+          <input type="text" name="contact" required />
         </div>
-
-        <div class="row">
-          <div><label>Thickness (t)</label><input name="thickness" placeholder="mm" /></div>
-          <div><label>Width (w)</label><input name="width" placeholder="mm" /></div>
-          <div><label>Length (l)</label><input name="length" placeholder="mm" /></div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" required />
         </div>
-
-        <div class="grid">
-          <div>
-            <label>Color</label>
-            <select name="color">
-              <option>—</option>
-              <option>PVD Emerald</option><option>Champagne</option><option>Rose Gold</option>
-              <option>Black</option><option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label>Finish</label>
-            <select name="finish">
-              <option>#4 Hairline</option><option>BA</option><option>Mirror #8</option>
-              <option>Bead-blast</option><option>Etched</option><option>Other</option>
-            </select>
-          </div>
+        <div>
+          <label>Country</label>
+          <input type="text" name="country" />
         </div>
-
-        <div class="grid">
-          <div>
-            <label>Quantity</label>
-            <input name="qty" placeholder="e.g., 2 coils, 50 sheets…" />
-          </div>
-          <div>
-            <label>Incoterm</label>
-            <select name="incoterm">
-              <option>EXW</option><option>FOB</option><option>CFR</option><option>CIF</option>
-              <option>DAP</option><option>DDP</option>
-            </select>
-          </div>
+        <div>
+          <label>Material</label>
+          <select name="material">
+            <option>Stainless Steel</option>
+            <option>Aluminum</option>
+            <option>Steel</option>
+            <option>Other</option>
+          </select>
         </div>
-
-        <div class="grid">
-          <div>
-            <label>Target deadline</label>
-            <input name="deadline" placeholder="YYYY-MM or date" />
-          </div>
-          <div>
-            <label>Notes</label>
-            <input name="notes" placeholder="Packing, certificate, special request…" />
-          </div>
+        <div>
+          <label>Grade</label>
+          <input type="text" name="grade" />
         </div>
-
-        <div class="actions">
-          <button class="btn" type="submit">Submit request</button>
+        <div>
+          <label>Thickness (t)</label>
+          <input type="text" name="thickness" />
         </div>
-        <p id="msg" class="muted"></p>
-      </form>
-    </div>
+        <div>
+          <label>Width (w)</label>
+          <input type="text" name="width" />
+        </div>
+        <div>
+          <label>Length (l)</label>
+          <input type="text" name="length" />
+        </div>
+        <div>
+          <label>Color</label>
+          <input type="text" name="color" />
+        </div>
+        <div>
+          <label>Quantity</label>
+          <input type="text" name="quantity" />
+        </div>
+        <div>
+          <label>Finish</label>
+          <input type="text" name="finish" />
+        </div>
+        <div>
+          <label>Incoterm</label>
+          <input type="text" name="incoterm" />
+        </div>
+        <div>
+          <label>Target deadline</label>
+          <input type="text" name="deadline" placeholder="YYYY-MM" />
+        </div>
+        <div class="full">
+          <label>Notes</label>
+          <textarea name="notes"></textarea>
+        </div>
+      </div>
+      <div style="margin-top:24px;">
+        <button type="submit">Submit request</button>
+      </div>
+    </form>
   </div>
 
+  <!-- Auto sender script -->
   <script>
-    // AJAX로 제출해서 사용자 UX 좋게
-    const form = document.getElementById('reqForm');
-    const msg  = document.getElementById('msg');
-    form.addEventListener('submit', async (e) => {
+  (() => {
+    const form = document.querySelector("form");
+    if (!form) return;
+    const ENDPOINT_DEFAULT = "https://request-sample.damian-kyungho-ha.workers.dev";
+    const ENDPOINT = form.dataset.endpoint?.trim() || ENDPOINT_DEFAULT;
+
+    const msgBox = document.createElement("div");
+    msgBox.setAttribute("aria-live","polite");
+    msgBox.style.marginTop="12px"; msgBox.style.fontSize="14px";
+    form.appendChild(msgBox);
+    const show = (t,ok=false)=>{ msgBox.textContent=t; msgBox.style.color=ok?"#0a7a63":"#c43d3d"; };
+
+    const formToJSON = (f)=>{
+      const all=f.querySelectorAll("input,select,textarea");
+      const data={}; all.forEach(el=>{
+        if(!el.name) return;
+        if(el.type==="checkbox") data[el.name]=el.checked;
+        else if(el.type==="radio"){ if(el.checked) data[el.name]=el.value.trim(); }
+        else data[el.name]=el.value.trim();
+      }); return data;
+    };
+
+    form.addEventListener("submit", async(e)=>{
       e.preventDefault();
-      msg.textContent = "Sending…";
+      const btn=form.querySelector('button[type="submit"]'); const prev=btn.textContent;
+      btn.disabled=true; btn.textContent="Sending...";
+      show("",true);
+
       try {
-        const data = new FormData(form);
-        const res  = await fetch(form.action, {
-          method: "POST",
-          body: new URLSearchParams([...data])
+        const payload=formToJSON(form);
+        const res=await fetch(ENDPOINT,{
+          method:"POST", headers:{"Content-Type":"application/json"},
+          body:JSON.stringify(payload)
         });
-        const js = await res.json();
-        msg.textContent = js.ok ? "✅ Sent. We’ll reply shortly." : ("❌ " + (js.error || "Failed"));
-        if (js.ok) form.reset();
-      } catch(err) {
-        msg.textContent = "❌ Network error";
+        let data={}; try{ data=await res.json(); }catch{}
+        if(!res.ok || data.ok===false) throw new Error(data.error||data.message||`HTTP ${res.status}`);
+        show("✅ Request sent. We’ll reply soon.",true);
+        form.reset();
+      } catch(err){
+        show("❌ "+(err.message||"Failed to send"));
+      } finally {
+        btn.disabled=false; btn.textContent=prev;
       }
     });
+  })();
   </script>
 </body>
 </html>
