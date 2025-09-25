@@ -2,158 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Request Material Samples</title>
+
+  <!-- (선택) 사이트 공통 스타일 -->
   <link rel="stylesheet" href="./assets/css/global.css" />
+
   <style>
-    body { font-family: sans-serif; background:#f8fafc; margin:0; padding:40px; }
-    .form-wrapper {
-      max-width: 800px; margin:0 auto; padding:32px;
-      background:#fff; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,.08);
+    :root{
+      --bg:#f8fafc; --card:#fff; --text:#0f172a; --muted:#64748b;
+      --line:#cbd5e1; --accent:#0a7a63; --danger:#c43d3d;
     }
-    h1 { margin-top:0; font-size:24px; margin-bottom:8px; }
-    p { margin-top:0; color:#555; margin-bottom:24px; }
-    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    label { display:block; font-size:14px; margin-bottom:6px; }
-    input, select, textarea {
-      width:100%; padding:10px 12px; font-size:14px;
-      border:1px solid #cbd5e1; border-radius:6px; box-sizing:border-box;
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg)}
+    .wrap{max-width:920px; margin:48px auto; padding:0 16px}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:0 2px 6px rgba(15,23,42,.06); padding:28px}
+    h1{margin:0 0 8px; font-size:26px}
+    p.lead{margin:0 0 22px; color:var(--muted)}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .full{grid-column:1/-1}
+    label{display:block; font-size:13px; color:var(--muted); margin:0 0 6px}
+    input,select,textarea{
+      width:100%; padding:10px 12px; font-size:14px; color:var(--text);
+      background:#fff; border:1px solid var(--line); border-radius:8px; outline:none;
     }
-    textarea { resize:vertical; min-height:80px; }
-    .full { grid-column:1 / -1; }
-    button {
-      background:#0a7a63; color:#fff; border:none;
-      padding:12px 20px; border-radius:6px; cursor:pointer; font-size:15px;
+    input:focus,select:focus,textarea:focus{border-color:#94a3b8; box-shadow:0 0 0 3px rgba(148,163,184,.25)}
+    textarea{min-height:96px; resize:vertical}
+    .actions{margin-top:20px; display:flex; gap:12px; align-items:center}
+    button{
+      background:var(--accent); color:#fff; border:0; border-radius:10px;
+      padding:12px 18px; font-weight:600; cursor:pointer;
     }
-    button:disabled { opacity:0.6; cursor:not-allowed; }
+    button:disabled{opacity:.65; cursor:not-allowed}
+    .msg{font-size:14px}
+    .ok{color:var(--accent)} .err{color:var(--danger)}
   </style>
 </head>
 <body>
-  <div class="form-wrapper">
-    <h1>Request Material Samples</h1>
-    <p>Choose your specs and submit. We’ll reply with availability and lead time.</p>
+  <main class="wrap">
+    <section class="card">
+      <h1>Request Material Samples</h1>
+      <p class="lead">Choose your specs and submit. We’ll reply with availability and lead time.</p>
 
-    <form>
-      <div class="grid">
-        <div>
-          <label>Company</label>
-          <input type="text" name="company" required />
-        </div>
-        <div>
-          <label>Contact name</label>
-          <input type="text" name="contact" required />
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" name="email" required />
-        </div>
-        <div>
-          <label>Country</label>
-          <input type="text" name="country" />
-        </div>
-        <div>
-          <label>Material</label>
-          <select name="material">
-            <option>Stainless Steel</option>
-            <option>Aluminum</option>
-            <option>Steel</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label>Grade</label>
-          <input type="text" name="grade" />
-        </div>
-        <div>
-          <label>Thickness (t)</label>
-          <input type="text" name="thickness" />
-        </div>
-        <div>
-          <label>Width (w)</label>
-          <input type="text" name="width" />
-        </div>
-        <div>
-          <label>Length (l)</label>
-          <input type="text" name="length" />
-        </div>
-        <div>
-          <label>Color</label>
-          <input type="text" name="color" />
-        </div>
-        <div>
-          <label>Quantity</label>
-          <input type="text" name="quantity" />
-        </div>
-        <div>
-          <label>Finish</label>
-          <input type="text" name="finish" />
-        </div>
-        <div>
-          <label>Incoterm</label>
-          <input type="text" name="incoterm" />
-        </div>
-        <div>
-          <label>Target deadline</label>
-          <input type="text" name="deadline" placeholder="YYYY-MM" />
-        </div>
-        <div class="full">
-          <label>Notes</label>
-          <textarea name="notes"></textarea>
-        </div>
-      </div>
-      <div style="margin-top:24px;">
-        <button type="submit">Submit request</button>
-      </div>
-    </form>
-  </div>
+      <!-- ✅ 사이트 내부 경로로 고정 -->
+      <form id="request-form" data-endpoint="/request-sample" novalidate>
+        <div class="grid">
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" required />
+          </div>
+          <div>
+            <label for="contact">Contact name</label>
+            <input id="contact" name="contact" type="text" required />
+          </div>
 
-  <!-- Auto sender script -->
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div>
+            <label for="country">Country</label>
+            <input id="country" name="country" type="text" />
+          </div>
+
+          <div>
+            <label for="material">Material</label>
+            <select id="material" name="material">
+              <option>Stainless Steel</option>
+              <option>Aluminum</option>
+              <option>Steel</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="grade">Grade</label>
+            <input id="grade" name="grade" type="text" placeholder="e.g., 304 / 316 / 430…" />
+          </div>
+
+          <div>
+            <label for="thickness">Thickness (t)</label>
+            <input id="thickness" name="thickness" type="text" placeholder="mm" />
+          </div>
+          <div>
+            <label for="width">Width (w)</label>
+            <input id="width" name="width" type="text" placeholder="mm" />
+          </div>
+          <div>
+            <label for="length">Length (l)</label>
+            <input id="length" name="length" type="text" placeholder="mm" />
+          </div>
+          <div>
+            <label for="color">Color</label>
+            <input id="color" name="color" type="text" placeholder="e.g., PVD Rose Gold" />
+          </div>
+
+          <div>
+            <label for="quantity">Quantity</label>
+            <input id="quantity" name="quantity" type="text" placeholder="e.g., 50 sheets" />
+          </div>
+          <div>
+            <label for="finish">Finish</label>
+            <input id="finish" name="finish" type="text" placeholder="#4 HL / BA / No.8 / Bead-blast…" />
+          </div>
+
+          <div>
+            <label for="incoterm">Incoterm</label>
+            <input id="incoterm" name="incoterm" type="text" placeholder="DAP / EXW / CIF…" />
+          </div>
+          <div>
+            <label for="deadline">Target deadline</label>
+            <input id="deadline" name="deadline" type="text" placeholder="YYYY-MM" />
+          </div>
+
+          <div class="full">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" placeholder="Specs, QA docs, packaging, anything else"></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Submit request</button>
+          <span id="formMsg" class="msg" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
   <script>
-  (() => {
-    const form = document.querySelector("form");
-    if (!form) return;
-    const ENDPOINT_DEFAULT = "https://request-sample.damian-kyungho-ha.workers.dev";
-    const ENDPOINT = form.dataset.endpoint?.trim() || ENDPOINT_DEFAULT;
+    (()=>{
+      const form = document.getElementById("request-form");
+      const btn  = document.getElementById("submitBtn");
+      const msg  = document.getElementById("formMsg");
 
-    const msgBox = document.createElement("div");
-    msgBox.setAttribute("aria-live","polite");
-    msgBox.style.marginTop="12px"; msgBox.style.fontSize="14px";
-    form.appendChild(msgBox);
-    const show = (t,ok=false)=>{ msgBox.textContent=t; msgBox.style.color=ok?"#0a7a63":"#c43d3d"; };
+      const ENDPOINT = (form.dataset.endpoint || "/request-sample").trim();
 
-    const formToJSON = (f)=>{
-      const all=f.querySelectorAll("input,select,textarea");
-      const data={}; all.forEach(el=>{
-        if(!el.name) return;
-        if(el.type==="checkbox") data[el.name]=el.checked;
-        else if(el.type==="radio"){ if(el.checked) data[el.name]=el.value.trim(); }
-        else data[el.name]=el.value.trim();
-      }); return data;
-    };
-
-    form.addEventListener("submit", async(e)=>{
-      e.preventDefault();
-      const btn=form.querySelector('button[type="submit"]'); const prev=btn.textContent;
-      btn.disabled=true; btn.textContent="Sending...";
-      show("",true);
-
-      try {
-        const payload=formToJSON(form);
-        const res=await fetch(ENDPOINT,{
-          method:"POST", headers:{"Content-Type":"application/json"},
-          body:JSON.stringify(payload)
-        });
-        let data={}; try{ data=await res.json(); }catch{}
-        if(!res.ok || data.ok===false) throw new Error(data.error||data.message||`HTTP ${res.status}`);
-        show("✅ Request sent. We’ll reply soon.",true);
-        form.reset();
-      } catch(err){
-        show("❌ "+(err.message||"Failed to send"));
-      } finally {
-        btn.disabled=false; btn.textContent=prev;
+      function show(text, ok=false){
+        msg.textContent = text;
+        msg.className = "msg " + (ok ? "ok" : "err");
       }
-    });
-  })();
+
+      function toJSON(formEl){
+        const data = {};
+        formEl.querySelectorAll("input,select,textarea").forEach(el=>{
+          if(!el.name) return;
+          if(el.type === "checkbox") data[el.name] = !!el.checked;
+          else data[el.name] = (el.value || "").trim();
+        });
+        return data;
+      }
+
+      form.addEventListener("submit", async (e)=>{
+        e.preventDefault();
+        show(""); btn.disabled = true; const prev = btn.textContent; btn.textContent = "Sending…";
+
+        try{
+          const payload = toJSON(form);
+          const res = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          let data = {};
+          try { data = await res.json(); } catch {}
+
+          if(!res.ok || data.ok === false){
+            throw new Error(data.error || data.message || ("HTTP " + res.status));
+          }
+
+          show("✅ Request sent. We’ll reply soon.", true);
+          form.reset();
+        }catch(err){
+          show("❌ " + (err.message || "Failed to send"));
+        }finally{
+          btn.disabled = false; btn.textContent = prev;
+        }
+      });
+    })();
   </script>
 </body>
 </html>
