@@ -134,7 +134,8 @@
       const btn  = document.getElementById("submitBtn");
       const msg  = document.getElementById("formMsg");
 
-      const ENDPOINT = (form.dataset.endpoint || "/request-sample").trim();
+      const ENDPOINT = form.dataset.endpoint?.trim() 
+        || "https://request-sample.damian-kyungho-ha.workers.dev";
 
       function show(text, ok=false){
         msg.textContent = text;
